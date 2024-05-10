@@ -35,7 +35,6 @@
         }
         .main-content ul li {
             margin-bottom: 3px;
-            font-family: "papercuties", sans-serif;
             padding-left: 20px;
         }
         .sidebar {
@@ -54,24 +53,9 @@
         }
         .sidebar ul li {
             margin-bottom: 3px;
-            font-family: "papercuties", sans-serif;
         }
         .main-content h1 {
-            font-family: "papercuties", sans-serif;
             margin: 0 0 15px 0;
-        }
-        .button {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .button:hover {
-            background-color: #555;
         }
         .message {
             padding: 10px;
@@ -91,6 +75,11 @@
             max-width: 600px; /* Setting a maximum width to keep the content readable */
             text-align: justify;
         }
+        /* Define SF Pro Display font */
+        @font-face {
+            font-family: 'SF Pro Display';
+            src: url('SF-Pro-Display-Regular.otf') format('opentype');
+        }
     </style>
 </head>
 <body>
@@ -98,7 +87,7 @@
         <div class="main-content">
             <h1>papercuties</h1>
             <ul>
-                <li><a href="https://papercutieswiki.github.io/papercutiesportfolio/mPlayer.html" target="_blank">music</a></li>
+                <li><a href="#">music</a></li>
                 <li><a href="#">social medias</a></li>
                 <li><a href="#" onclick="showAboutMe()">about me</a></li>
                 <li><a href="https://www.upwork.com/freelancers/~0186a7997bf53aeb65" target="_blank">upwork profile</a></li>
@@ -114,7 +103,7 @@
         function showAboutMe() {
             var aboutMeText = `I'm a young musician and sound designer from a small town in Italy. Over the span of 5 years in music production, I've worked under 2 different aliases on SoundCloud, roaming through various music genres.\n\n• My Tools\nI primarily use Ableton Live, but I'm also practical with Fruity Loops Studio, Audacity, GarageBand, and Bitwig.\n\n• What I'm handy with\nI can switch through numerous genres, including EDM, RnB, Funk, Lo-Fi, Ambient, Pop (and subgenres), Orchestral, Acoustic, Field Recordings, Acapella, Breakcore, DnB, House, and more. I also worked on a fan game some months ago, where I created all the UI and in-game SFX, including OST, jumpscare sounds, menu and various button beeps, etc.\n\n• Experiences and such\nI've worked under 2 aliases on SoundCloud: "nazuki" (currently on indefinite hiatus) and "papercuties," which is my primary alias for music and related content. I've released approximately 30 tracks over 4 years and have plenty of unreleased projects. I have also been A&R on the dubstep underground music label "Inhalant Audio" for some months before its closure.\n\nCurrently, I am fully dedicated to producing music, and I'm open to any opportunities within my fields.`;
             var aboutMeDiv = document.getElementById("aboutMeSection");
-            aboutMeDiv.innerText = aboutMeText;
+            aboutMeDiv.innerHTML = `<p style="font-family: 'SF Pro Display', Arial, sans-serif;">${aboutMeText}</p>`;
         }
 
         function copyEmailToClipboard(event) {
